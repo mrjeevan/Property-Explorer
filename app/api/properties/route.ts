@@ -41,7 +41,7 @@ export const POST = async (req: Request) => {
     // { name: 'type', value: 'Apartment' }
 
     const propertyData: any = {
-      types: formData.get("type"),
+      type: formData.get("type"),
       name: formData.get("name"),
       description: formData.get("description"),
       location: {
