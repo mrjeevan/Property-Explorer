@@ -6,6 +6,7 @@ import { Inter } from "next/font/google";
 import "../assets/styles/global.css";
 
 import { MessageWrapper } from "@/context/MessageContext";
+import "photoswipe/dist/photoswipe.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
