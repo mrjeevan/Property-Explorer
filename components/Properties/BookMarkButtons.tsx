@@ -20,6 +20,7 @@ export default function BookMarkButton({ property }: Props) {
     try {
       const res = await fetch("/api/bookmarks", {
         method: "POST",
+        cache: "force-cache",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ propertyId: property._id }),
       });
@@ -43,6 +44,7 @@ export default function BookMarkButton({ property }: Props) {
         try {
           const res = await fetch("/api/bookmarks/check", {
             method: "POST",
+            cache: "force-cache",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ propertyId: property._id }),
           });

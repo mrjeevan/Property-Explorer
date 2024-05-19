@@ -1,15 +1,12 @@
 import PropertyCard from "@/components/Properties/PropertyCard";
 import { IProperty } from "@/types/property";
-import Link from "next/link";
 import { fetchProperties } from "@/utils/requests";
-type Props = {};
+import Link from "next/link";
 
-async function HomeComponents({}: Props) {
-  const properties: IProperty[] = await fetchProperties();
+async function HomeComponents() {
+  let data = await fetchProperties();
 
-  const randomProperties = properties
-    .sort(() => Math.random() - Math.random())
-    .slice(0, 3);
+  const randomProperties = data.properties || [];
 
   return (
     <>
@@ -23,7 +20,7 @@ async function HomeComponents({}: Props) {
             {randomProperties.length === 0 ? (
               <p>No Properties found</p>
             ) : (
-              randomProperties.map((property) => {
+              randomProperties.map((property: IProperty) => {
                 return <PropertyCard key={property._id} property={property} />;
               })
             )}

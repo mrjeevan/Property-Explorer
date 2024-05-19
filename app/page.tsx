@@ -1,7 +1,6 @@
 import Hero from "@/components/Hero";
 import HomeComponents from "@/components/HomeComponents";
 import InfoBoxes from "@/components/InfoBoxes";
-import connectDb from "@/config/database";
 
 const HomePage = () => {
   return (
